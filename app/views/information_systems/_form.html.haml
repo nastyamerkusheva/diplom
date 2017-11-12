@@ -1,0 +1,23 @@
+= form_for @information_system do |f|
+  - if @information_system.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@information_system.errors.count, "error")} prohibited this information_system from being saved:"
+      %ul
+        - @information_system.errors.full_messages.each do |message|
+          %li= message
+
+  .row
+    .col-md-3.col-centre
+      = f.label :name
+    .col-md-6.col-centre
+      = f.text_field :name
+  .row
+    .col-md-3.col-centre
+      = f.label :timezone
+    .col-md-6.col-centre
+      = f.text_field :timezone
+  .my-hr
+    %hr
+  .row
+    .col-md-6.col-centre
+      = f.submit t('helpers.submit.submit'), class: "btn btn-primary buttons"

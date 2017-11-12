@@ -1,0 +1,11 @@
+I"}(function() {
+  var ready;
+
+  ready = function() {
+    return alert("hi");
+  };
+
+  $(document).ready(ready);
+
+}).call(this);
+:ET

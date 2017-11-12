@@ -1,0 +1,38 @@
+= form_for @characteristic do |f|
+  - if @characteristic.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@characteristic.errors.count, "error")} prohibited this characteristic from being saved:"
+      %ul
+        - @characteristic.errors.full_messages.each do |message|
+          %li= message
+
+  .row
+    .col-md-3.col-centre
+      = f.label :name
+    .col-md-6.col-centre
+      = f.text_field :name
+  .row
+    .col-md-3.col-centre
+      = f.label :information_system
+    .col-md-6.col-centre
+      = f.text_field :information_system_id
+  .row
+    .col-md-3.col-centre
+      = f.label :type_of_data
+    .col-md-6.col-centre
+      = f.number_field :type_of_data
+  .row
+    .col-md-3.col-centre
+      = f.label :result_type
+    .col-md-6.col-centre
+      = f.number_field :result_type
+  .row
+    .col-md-3.col-centre
+      = f.label :address
+    .col-md-6.col-centre
+      = f.text_field :address_id
+  .my-hr
+    %hr
+  .row
+    .col-md-6.col-centre
+      = f.submit t('helpers.submit.submit'), class: "btn btn-primary buttons"
